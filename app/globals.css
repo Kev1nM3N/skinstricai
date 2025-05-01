@@ -9,3 +9,11 @@
 html {
   font-family: "roobert";
 }
+
+.lucas {
+  transition: all 300ms;
+}
+
+.david:hover .lucas {
+  transform: translateX(25px);
+}
