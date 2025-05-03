@@ -14,7 +14,7 @@ export default function Nav() {
             <h1 className='ml-12 font-medium mr-5'>SKINSTRIC</h1>
             <Image src="/images/location.png" width={75} height={80} alt='heading' />
           </div>
-          {pathname !== '/pages/datafield' && (
+          {pathname === '/' && (
             <button className='mr-12 py-2 px-6 bg-[#1A1B1C] text-[var(--background)]'>ENTER CODE</button>
           )}
         </div>

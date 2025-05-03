@@ -26,7 +26,7 @@ export default function Home() {
         <div>
           <h1
             className={`text-[clamp(2.5rem,10vw,8rem)] text-center leading-tight font-light tracking-tighter transition-all ${
-              hovered ? "-translate-x-[25rem] duration-300" : ""}`}
+              hovered ? "-translate-x-[18rem] duration-300" : ""}`}
           >
             Sophisticated <br /> skincare
           </h1>
