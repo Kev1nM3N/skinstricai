@@ -10,9 +10,11 @@ export default function Nav() {
     <nav>
       <div>
         <div className="row flex justify-between items-center py-6">
-          <div className="left-box-nav flex">
+          <div className="left-box-nav flex items-center">
             <h1 className='ml-12 font-medium mr-5'>SKINSTRIC</h1>
-            <Image src="/images/location.png" width={75} height={80} alt='heading' />
+            <span className='text-black/50'>{"["}</span>
+            <p className='mx-2 text-black/50 font-semibold text-sm'>INTRO</p>
+            <span className='text-black/50'>{"]"}</span>
           </div>
           {pathname === '/' && (
             <button className='mr-12 py-2 px-6 bg-[#1A1B1C] text-[var(--background)]'>ENTER CODE</button>
