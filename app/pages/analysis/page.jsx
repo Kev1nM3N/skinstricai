@@ -1,35 +1,46 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Analysis() {
   return (
-    <section className="relative w-full flex flex-col items-center justify-center text-center">
-      {/* Back Button */}
-      {/* <Link href="/" className="absolute -bottom-70 left-15 flex items-center space-x-2 cursor-pointer group transition">
-        <div className="w-8 h-8 border rotate-45 flex items-center justify-center group-hover:w-10 group-hover:h-10 duration-300">
-          <span className="-rotate-45">◀</span>
-        </div>
-        <span className="pl-2 group-hover:translate-x-3 duration-300">BACK</span>
-      </Link> */}
-
-      {/* Top Left Label */}
-      {/* <h1 className="absolute -top-110 left-12 font-semibold">TO START ANALYSIS</h1> */}
-
-      {/* Centered Icon Options */}
-      <div className="flex flex-col">
-        {/* Camera Option sm:flex sm:w-full justify-evenly */}
+    <section className="relative h-[55vh] sm:h-full">
+      <div className="flex h-full flex-col justify-evenly sm:flex-row">
         <div className="relative text-center">
-          <figure className="mx-auto mb-8 transition group">
-            <img src="/images/camera.png" alt="camera" className="w-36 h-36 object-contain mx-auto group-hover:scale-105 duration-800 cursor-pointer" />
+          <figure className="relative w-52 h-52 sm:w-90 mx-auto group transition">
+            <Image
+              src="/images/full rectangle.png"
+              alt="rectangular border"
+              fill
+              className="z-0 object-contain Ben"
+              sizes="(max-width: 840px) 100vw, 600px"
+            />
+
+            {/* Foreground camera icon */}
+            <img
+              src="/images/camera.png"
+              alt="camera"
+              className="relative z-10 object-contain group-hover:scale-105 duration-800 cursor-pointer"
+            />
           </figure>
         </div>
 
-        {/* Gallery Option */}
         <div className="relative text-center">
-          <figure className="mx-auto mb-2 transition group">
-            <img src="/images/gallery.png" alt="gallery" className="w-36 h-36 object-contain mx-auto group-hover:scale-105 duration-800 cursor-pointer" />
+          <figure className="mx-auto transition group">
+            <img
+              src="/images/gallery.png"
+              alt="gallery"
+              className="w-30 h-30 object-contain mx-auto group-hover:scale-105 duration-800 cursor-pointer"
+            />
           </figure>
+          <Image
+            src="/images/full rectangle.png"
+            width={250}
+            height={250}
+            alt="rectangular border"
+            className=""
+          />
         </div>
       </div>
     </section>
