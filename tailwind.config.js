@@ -13,6 +13,12 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-roobert)', ...defaultTheme.fontFamily.sans],
       },
+      animation: {
+        'spin-slow': 'spin 64s linear infinite',
+      },
+      colors: {
+        testcolor: '#ff00ff',
+      },
     },
   },
   plugins: [],

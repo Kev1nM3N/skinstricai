@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Loader from "@/app/components/Loader";
+//must fix input field with responsiveness
 
 export default function UserInputs() {
   const [step, setStep] = useState(1);
