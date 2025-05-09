@@ -1,9 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import Loader from "@/app/components/Loader";
-//must fix input field with responsiveness
 
 export default function UserInputs() {
   const [step, setStep] = useState(1);
@@ -13,7 +11,6 @@ export default function UserInputs() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [complete, setComplete] = useState(false);
-  const router = useRouter();
 
   useEffect(() => {
     localStorage.removeItem("userName");
@@ -68,7 +65,7 @@ export default function UserInputs() {
     <section className="relative w-full flex flex-col items-center justify-center text-center">
       {/* Back Button */}
       {!loading && !complete && (
-        <Link href="/" className="absolute -bottom-80 left-15 flex items-center space-x-2 cursor-pointer group transition">
+        <Link href="/" className="absolute -bottom-110 left-15 flex items-center space-x-2 cursor-pointer group transition">
           <div className="w-8 h-8 border rotate-45 flex items-center justify-center group-hover:w-10 group-hover:h-10 duration-300">
             <span className="-rotate-45">◀</span>
           </div>
@@ -78,7 +75,7 @@ export default function UserInputs() {
 
       {/* Top Label */}
       {!loading && !complete && (
-        <h1 className="absolute -top-105 left-12 font-semibold">TO START ANALYSIS</h1>
+        <h1 className="absolute -top-130 left-12 font-semibold">TO START ANALYSIS</h1>
       )}
 
       {/* LOADING STATE */}
@@ -105,7 +102,7 @@ export default function UserInputs() {
 
       {/* FORM STATE */}
       {!loading && !complete && (
-        <div className="border-dotted border p-28">
+        <div className="">
           <p className="text-sm tracking-tight mb-2 text-black/50">CLICK TO TYPE</p>
           {error && <p className="text-xs text-red-500 mb-2">{error}</p>}
           <input
@@ -116,8 +113,11 @@ export default function UserInputs() {
             onBlur={() => setFocused(false)}
             onKeyDown={handleKeyDown}
             placeholder={step === 1 ? "Introduce Yourself" : "Where are you from?"}
-            className="text-2xl sm:text-6xl border-b outline-none text-center placeholder-black-50 tracking-tighter"
+            className="text-5xl text-center border-b border-black focus:outline-none w-[372px] sm:w-[432px] tracking-[-0.07em] leading-[64px] text-[#1A1B1C]"
           />
+          <figure className="absolute -bottom-50 left-0 w-full -z-1 lg:-bottom-64">
+            <img src="/images/full rectangle.png" alt="border" className="w-[440px] h-[440px] mx-auto lg:w-[580px] lg:h-[580px] rectangleBorder" />
+          </figure>
         </div>
       )}
     </section>

@@ -15,28 +15,52 @@ export default function Home() {
             src="/images/Rectangle 2779.png"
             width={300}
             height={400}
-            alt="right square"
+            alt="pointing right border"
+            className="hidden lg:block"
           />
-          <div className="absolute top-1/2 right-28 -translate-y-1/2 flex items-center space-x-2 text-[clamp(0.65rem,2vw,1rem)] david">
+          <div className="absolute top-1/2 right-10 -translate-y-1/2 hidden lg:flex items-center space-x-2 text-[clamp(0.65rem,2vw,1rem)] david">
             <button className="border rotate-45 w-10 h-10 flex items-center justify-center cursor-no-drop">
               <span className="block -rotate-287">◀</span>
             </button>
             <span className="pl-3 lucas">DISCOVER A.I.</span>
           </div>
         </div>
-        <div>
-          <h1 className={`${headingStyles} ${hovered ? "-translate-x-[22rem] duration-600" : ""}`}>Sophisticated<br /></h1>
-          <h1 className={`${headingStyles} ${hovered ? "-translate-x-[30rem] duration-700" : ""}`}>skincare</h1>
+
+        <div className="flex flex-col items-center relative">
+          <h1 className={`${headingStyles} ${hovered ? "-translate-x-[20rem] duration-600" : ""}`}>Sophisticated<br /></h1>
+          <h1 className={`${headingStyles} ${hovered ? "-translate-x-[28rem] duration-700" : ""}`}>skincare</h1>
+          <p className="lg:hidden w-[30ch] my-4 text-[14px] font-semibold text-center text-[#1a1b1c83]">
+            Skinstric developed an A.I. that creates a highly-personalized
+            routine tailored to what your skin needs.
+          </p>
+          <div className="flex justify-between w-[9rem] lg:hidden hover:scale-105 duration-300">
+            <Link href="/pages/datafield">
+              <button className="relative flex items-center gap-4">
+                <span className="text-[12px] font-bold cursor-pointer">
+                  ENTER EXPERIENCE
+                </span>
+              </button>
+            </Link>
+            <div className="w-6 h-6 border rotate-45 flex items-center justify-center">
+              <span className="-rotate-45">▶</span>
+            </div>
+          </div>
         </div>
+
+        <figure className="absolute top-95 w-full lg:hidden -z-1">
+          <img src="/images/full rectangle.png" alt="border" className="w-[430px] h-[430px] mx-auto" />
+        </figure>
+        
         <div className="relative">
           <Image
             src="/images/Rectangle 2778.png"
             width={300}
             height={400}
-            alt="left square"
+            alt="pointing left square border"
+            className="hidden lg:block"
           />
           <div
-            className="absolute top-1/2 left-28 -translate-y-1/2 flex items-center space-x-2 text-[clamp(0.65rem,2vw,1rem)] group"
+            className="absolute top-1/2 left-12 -translate-y-1/2 hidden lg:flex items-center space-x-2 text-[clamp(0.65rem,2vw,1rem)] group"
             onMouseEnter={() => isHovered(true)}
             onMouseLeave={() => isHovered(false)}
           >
@@ -50,8 +74,9 @@ export default function Home() {
             </Link>
           </div>
         </div>
+
       </div>
-      <span className="absolute bottom-16 left-16 text-[clamp(0.85rem,2vw,1rem)] block leading-snug">
+      <span className="absolute bottom-16 left-16 text-[clamp(0.85rem,2vw,1rem)] leading-snug hidden lg:block">
         SKINSTRIC DEVELOPED AN A.I. THAT CREATES <br />
         A HIGHLY-PERSONALISED ROUTINE TAILORED TO <br />
         WHAT YOUR SKIN NEEDS.

@@ -1,11 +1,9 @@
 "use client"
 import React from 'react';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 export default function Nav() {
   const pathname = usePathname();
-
   return (
     <nav>
       <div>
@@ -17,7 +15,7 @@ export default function Nav() {
             <span className='text-black/50'>{"]"}</span>
           </div>
           {pathname === '/' && (
-            <button className='mr-12 py-2 px-6 bg-[#1A1B1C] text-[var(--background)]'>ENTER CODE</button>
+            <button className='mr-8 py-2 px-4 bg-[#1A1B1C] text-[#ffffff] text-xs lg:text-base lg:px-6 lg:mr-12'>ENTER CODE</button>
           )}
         </div>
       </div>

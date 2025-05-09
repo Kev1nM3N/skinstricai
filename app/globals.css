@@ -8,6 +8,7 @@
 
 html {
   font-family: "roobert";
+  overflow-x: hidden;
 }
 
 .lucas {
@@ -18,7 +19,7 @@ html {
   transform: translateX(25px);
 }
 
-/* .rectangleBorder {
+.rectangleBorder {
   animation: spinBorder 64s infinite linear;
 }
 
@@ -30,4 +31,4 @@ html {
   to {
     transform: rotate(360deg);
   }
-} */
+}
