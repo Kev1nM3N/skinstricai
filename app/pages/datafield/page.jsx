@@ -35,9 +35,26 @@ export default function UserInputs() {
     if (storedName) setName(storedName);
     if (storedLocation) setLocation(storedLocation);
   }, []);
+
+  const sendUserInfo = async () => {
+    try {
+      const response = await fetch("https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseOne", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, location }),
+      });
+
+      const data = await response.json();
+      console.log("Server response:", data);
+    } catch (error) {
+      console.error("Error sending data:", error);
+    }
+  };
   
 
-  const handleKeyDown = (e) => {
+  const handleKeyDown = async (e) => {
     if (e.key === "Enter") {
       if (step === 1) {
         if (name.trim()) {
@@ -50,10 +67,13 @@ export default function UserInputs() {
         if (location.trim()) {
           setError("");
           setLoading(true);
+
+          await sendUserInfo();
+          
           setTimeout(() => {
             setLoading(false);
             setComplete(true);
-          }, 3000); // 3 seconds
+          }, 3000);
         } else {
           setError("Please enter a valid city");
         }
