@@ -156,7 +156,7 @@ export default function Camera() {
 
     {photoTaken && (
       <div className="absolute w-full h-full z-10 flex flex-col items-center justify-center text-[var(--background)]">
-        <img src={capturedImage} alt="Captured" className=" absolute h-full object-cover z-10" />
+        <img src={capturedImage} alt="Captured" className=" absolute h-full w-full object-cover z-10" />
 
         <p className="z-20 text-xl">GREAT SHOT!</p>
 
