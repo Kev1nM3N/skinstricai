@@ -16,7 +16,7 @@ html {
 }
 
 .david:hover .lucas {
-  transform: translateX(25px);
+  transform: translateX(20px);
 }
 
 .rectangleBorder {

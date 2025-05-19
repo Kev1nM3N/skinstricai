@@ -83,7 +83,7 @@ export default function UserInputs() {
 
   return (
     <section className="relative w-full flex flex-col items-center justify-center text-center">
-      {/* Back Button */}
+      {/* BACK BUTTON */}
       {!loading && !complete && (
         <Link href="/" className="absolute -bottom-110 left-15 flex items-center space-x-2 cursor-pointer group transition">
           <div className="w-8 h-8 border rotate-45 flex items-center justify-center group-hover:w-10 group-hover:h-10 duration-300">
@@ -93,7 +93,7 @@ export default function UserInputs() {
         </Link>
       )}
 
-      {/* Top Label */}
+      {/* TOP LABEL */}
       {!loading && !complete && (
         <h1 className="absolute -top-130 left-12 font-semibold">TO START ANALYSIS</h1>
       )}
@@ -112,7 +112,7 @@ export default function UserInputs() {
           <h1 className="text-xl font-semibold">Thank you!</h1>
           <p className="text-sm text-black/60">Proceed to the next step</p>
           <Link href="/pages/analysis" className="absolute -bottom-115 right-25 flex items-center space-x-2 cursor-pointer group transition">
-            <span className="pr-2 group-hover:-translate-x-3 duration-300">PROCEED</span>
+            <span className="pr-2">PROCEED</span>
             <div className="w-8 h-8 border rotate-45 flex items-center justify-center group-hover:w-10 group-hover:h-10 duration-300">
               <span className="-rotate-45">▶</span>
             </div>
@@ -133,7 +133,7 @@ export default function UserInputs() {
             onBlur={() => setFocused(false)}
             onKeyDown={handleKeyDown}
             placeholder={step === 1 ? "Introduce Yourself" : "Where are you from?"}
-            className="text-5xl text-center border-b border-black focus:outline-none w-[372px] sm:w-[432px] tracking-[-0.07em] leading-[64px] text-[#1A1B1C]"
+            className="text-4xl text-center border-b border-black focus:outline-none w-[372px] sm:w-[432px] sm:text-5xl tracking-[-0.07em] leading-[64px] text-[#1A1B1C]"
           />
           <figure className="absolute -bottom-50 left-0 w-full -z-1 lg:-bottom-64">
             <img src="/images/full rectangle.png" alt="border" className="w-[440px] h-[440px] mx-auto lg:w-[580px] lg:h-[580px] rectangleBorder" />

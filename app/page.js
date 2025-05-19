@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Home() {
   const [hovered, isHovered] = useState(false);
-  const headingStyles = "text-[clamp(2.5rem,10vw,8rem)] text-center leading-tight font-light tracking-tighter transition-all";
+  const headingStyles = "text-[clamp(2.5rem,9vw,8rem)] text-center leading-tight font-light tracking-tighter transition-all";
 
   return (
     <main className="">
@@ -18,11 +18,11 @@ export default function Home() {
             alt="pointing right border"
             className="hidden lg:block"
           />
-          <div className="absolute top-1/2 right-10 -translate-y-1/2 hidden lg:flex items-center space-x-2 text-[clamp(0.65rem,2vw,1rem)] david">
+          <div className="absolute top-1/2 right-18 -translate-y-1/2 hidden lg:flex items-center space-x-2 text-[clamp(0.65rem,2vw,1rem)] david">
             <button className="border rotate-45 w-10 h-10 flex items-center justify-center cursor-no-drop">
               <span className="block -rotate-287">◀</span>
             </button>
-            <span className="pl-3 lucas">DISCOVER A.I.</span>
+            <span className="pl-2 lucas">DISCOVER A.I.</span>
           </div>
         </div>
 
@@ -33,17 +33,17 @@ export default function Home() {
             Skinstric developed an A.I. that creates a highly-personalized
             routine tailored to what your skin needs.
           </p>
-          <div className="flex justify-between w-[9rem] lg:hidden hover:scale-105 duration-300">
-            <Link href="/pages/datafield">
-              <button className="relative flex items-center gap-4">
+          <div className="flex items-center w-[9rem] lg:hidden hover:scale-105 duration-300">
+            <Link href="/pages/datafield" className="flex items-center">
+              <button className="relative flex items-center mr-2">
                 <span className="text-[12px] font-bold cursor-pointer">
                   ENTER EXPERIENCE
                 </span>
               </button>
+              <div className="w-6 h-6 border rotate-45 flex items-center justify-center">
+                <span className="-rotate-45">▶</span>
+              </div>
             </Link>
-            <div className="w-6 h-6 border rotate-45 flex items-center justify-center">
-              <span className="-rotate-45">▶</span>
-            </div>
           </div>
         </div>
 
@@ -60,11 +60,11 @@ export default function Home() {
             className="hidden lg:block"
           />
           <div
-            className="absolute top-1/2 left-12 -translate-y-1/2 hidden lg:flex items-center space-x-2 text-[clamp(0.65rem,2vw,1rem)] group"
+            className="absolute top-1/2 left-18 -translate-y-1/2 hidden lg:flex items-center space-x-2 text-[clamp(0.65rem,2vw,1rem)] group"
             onMouseEnter={() => isHovered(true)}
             onMouseLeave={() => isHovered(false)}
           >
-            <span className="pr-3 transition-transform duration-300 group-hover:-translate-x-[25px]">
+            <span className="pr-2 transition-transform duration-300 group-hover:-translate-x-[20px]">
               TAKE TEST
             </span>
             <Link href="/pages/datafield">

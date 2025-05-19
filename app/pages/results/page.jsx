@@ -8,7 +8,7 @@ export default function Results() {
   return (
     <section>
       <Link
-        href="/"
+        href="/pages/analysis"
         className="absolute bottom-40 left-15 flex items-center space-x-2 cursor-pointer group transition"
       >
         <div className="w-8 h-8 border rotate-45 flex items-center justify-center group-hover:w-10 group-hover:h-10 duration-300">
@@ -34,12 +34,11 @@ export default function Results() {
         <img
           src="/images/full rectangle.png"
           alt="border"
-          className={`absolute w-[600px] -translate-x-4 -translate-y-4 transition duration-250 ${hovered ? "opacity-100" : "opacity-0"}`}
+          className={`absolute w-[600px] transition duration-250 ${hovered ? "opacity-100" : "opacity-0"}`}
         />
-        <div className="relative w-[400px] h-[400px] sm:w-[350px] sm:h-[350px] flex items-center justify-center">
+        <div className="relative w-[350px] h-[350px] flex items-center justify-center">
           {/* FOUR DIAMONDS */}
-          <div className="flex flex-wrap gap-1 rotate-45">
-            {/* Each diamond container */}
+          <div className="flex flex-wrap gap-1 rotate-45 pl-7">
             <div className="relative w-[150px] h-[150px] ">
               <Link href="/pages/summary">
                 <div onMouseEnter={() => isHovered(true)} onMouseLeave={() => isHovered(false)} 

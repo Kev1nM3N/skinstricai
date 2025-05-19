@@ -9,10 +9,15 @@ export default function Analysis() {
   const fileInputRef = useRef(null);
   const [loading, setLoading] = useState(false);
   const [demographics, setDemographics] = useState(null);
+  const [showPermissionBox, setShowPermissionBox] = useState(false);
   const router = useRouter();
 
-  const handleImageClick = () => {
-    fileInputRef.current.click();
+  const handleImageClick = (type) => {
+      if (type === "camera") {
+      setShowPermissionBox(true);
+    } else {
+      fileInputRef.current.click();
+    }
   };
 
   const handleFileChange = async (e) => {
@@ -48,12 +53,12 @@ export default function Analysis() {
     reader.readAsDataURL(file);
   };
 
+
   if (loading) return <MyLoader />;
 
   return (
     <section className="flex flex-col justify-center items-center relative w-full">
-
-      <Link href="/" className="absolute -bottom-40 left-15 sm:-bottom-80 flex items-center space-x-2 cursor-pointer group transition">
+      <Link href="/pages/datafield" className="absolute -bottom-40 left-15 sm:-bottom-80 flex items-center space-x-2 cursor-pointer group transition">
         <div className="w-8 h-8 border rotate-45 flex items-center justify-center group-hover:w-10 group-hover:h-10 duration-300">
           <span className="-rotate-45">◀</span>
         </div>
@@ -79,7 +84,7 @@ export default function Analysis() {
                 width={126}
                 height={126}
                 className="absolute top-[6rem] left-[6rem] lg:top-[10rem] lg:left-[10rem] cursor-pointer hover:scale-104 transition duration-200"
-                onClick={handleImageClick}
+                onClick={() => handleImageClick(icon.alt)}
               />
               <p className="font-normal text-sm leading-6 absolute bottom-10 left-20 lg:hidden">
                 {icon.alt === "camera" ? "Allow A.I to scan your face" : "Allow A.I to access gallery"}
@@ -106,7 +111,31 @@ export default function Analysis() {
         ))}
       </div>
 
-      {/* Hidden file input */}
+      {showPermissionBox && (
+        <div className="w-full absolute top-23 z-50 sm:top-20 sm:-left-24 lg:top-42 ">
+          <div className="bg-[#1A1B1C] pt-4 pb-2 shadow-lg w-[360px] mx-auto">
+            <h2 className="text-[#FCFCFC] font-semibold mb-12 leading-[24px] px-6">
+              ALLOW A.I. TO ACCESS YOUR CAMERA
+            </h2>
+            <div className="flex mt-4 border-t border-[#FCFCFC] pt-2">
+              <button
+                onClick={() => setShowPermissionBox(false)}
+                className="pr-8 translate-x-45 text-[#fcfcfca1] font-normal text-sm leading-4 tracking-tight cursor-pointer hover:text-gray-500"
+              >
+                DENY
+              </button>
+              <button
+                onClick={() => router.push("/pages/camera")}
+                className="pr-5 translate-x-45 text-[#FCFCFC] font-semibold text-sm leading-4 tracking-tight cursor-pointer hover:text-gray-300"
+              >
+                ALLOW
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* HIDDEN FILE INPUT */}
       <input
         ref={fileInputRef}
         type="file"
